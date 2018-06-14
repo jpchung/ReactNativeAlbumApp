@@ -1,6 +1,6 @@
 // import library to create component
 import React, { Component } from 'react';
-import { Text, View, fetch } from 'react-native';
+import { ScrollView, fetch } from 'react-native';
 import AlbumDetail from './AlbumDetail';
 
 // create compoent (class-based)
@@ -23,7 +23,7 @@ class AlbumList extends Component {
   renderAlbums() {
     //access js variables in jsx with curly braces
     //should give each child component a unique key for re-render
-    //pass album to child component via prop
+    //pass variable to child component as a prop
     return this.state.albums.map(album =>
       <AlbumDetail key={album.title} album={album} />
     );
@@ -34,9 +34,9 @@ class AlbumList extends Component {
     console.log(this.state);
 
     return (
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }
