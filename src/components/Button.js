@@ -4,14 +4,14 @@ import { Text, TouchableOpacity } from 'react-native';
 
 //create component (functional)
 //takes onPress prop from parent to keep functionality general
-const Button = ({ onPress }) => {
+const Button = ({ onPress, children }) => {
   //destructured props
   const { textStyle, buttonStyle } = styles;
 
   return (
     <TouchableOpacity style={buttonStyle} onPress={onPress}>
       <Text style={textStyle}>
-        BUY
+        {children}
       </Text>
     </TouchableOpacity>
   );
